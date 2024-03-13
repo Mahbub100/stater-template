@@ -1,31 +1,22 @@
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
-import './App'
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from './Component/Home';
-import Navbar from './Component/Navbar';
-import Footer from './Component/Footer';
+import Home from "./Component/Home";
+import Footer from "./Component/Footer";
 
-const App = () => {
+export default function App() {
   return (
-    <>
-     <Navbar/>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/footer" element={<Footer/>} />
-         
-        </Routes>
-      </Router>
-    
-    </>
-   
-
-  )
+    <BrowserRouter>
+      <Routes>
+        
+          <Route index element={<Home />} />
+          <Route path="footer" element={<Footer />} />
+          
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
