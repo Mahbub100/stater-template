@@ -10,9 +10,9 @@ export default function App() {
       <Routes>
         
           <Route index element={<Home />} />
-          <Route path="footer" element={<Footer />} />
+          <Route path="" element={<Blogs />} />
           
-        </Route>
+       
       </Routes>
     </BrowserRouter>
   );
